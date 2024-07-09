@@ -1,0 +1,55 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:perfectionist/recommended-natural',
+    'plugin:react-hooks/recommended',
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react-refresh', 'perfectionist'],
+  rules: {
+    'perfectionist/sort-array-includes': 'warn',
+    'perfectionist/sort-classes': 'warn',
+    'perfectionist/sort-enums': 'warn',
+    'perfectionist/sort-exports': 'warn',
+    'perfectionist/sort-imports': [
+      'warn',
+      {
+        type: 'natural',
+        order: 'asc',
+        groups: [
+            ['builtin', 'external'],
+          'internal',
+          ['parent', 'sibling', 'index'],
+          'side-effect',
+          'style',
+          'object',
+          'unknown',
+        ],
+        'newlines-between': 'always',
+        'internal-pattern': [
+          '@/app/**',
+          '@/assets/**',
+          '@/pages/**',
+          '@/shared/**',
+          '@/widgets/**',
+        ],
+      },
+    ],
+    'perfectionist/sort-interfaces': 'warn',
+    'perfectionist/sort-jsx-props': 'warn',
+    'perfectionist/sort-named-exports': 'warn',
+    'perfectionist/sort-named-imports': 'warn',
+    'perfectionist/sort-object-types': 'warn',
+    'perfectionist/sort-objects': 'warn',
+    'perfectionist/sort-union-types': 'warn',
+
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+  },
+};
