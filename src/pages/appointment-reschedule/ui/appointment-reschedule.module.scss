@@ -1,4 +1,18 @@
 @use '@/app/styles/variables';
 @use '@/app/styles/utils';
 
-.root {}
+.date-card {
+  margin: utils.rem(48px) 0 utils.rem(58px);
+
+  & > svg {
+    width: utils.rem(30px);
+    height: utils.rem(30px);
+    margin-right: utils.rem(26px);
+    color: #9BA1AA;
+  }
+}
+
+.schedule-card {
+  margin: utils.rem(48px) 0 utils.rem(58px);
+}
+
