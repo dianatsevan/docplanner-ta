@@ -1,0 +1,22 @@
+@use 'utils';
+
+$breakpoints: (
+  sm: utils.rem(512px),
+  md: utils.rem(768px),
+  xl: utils.rem(1024px),
+);
+
+$breakpoint-landscape: (
+  xs: utils.rem(375px),
+  sm: utils.rem(480px),
+  md: utils.rem(640px),
+  lg: utils.rem(820px),
+  xl: utils.rem(1040px),
+);
+
+$colors: (
+  page-bg: #edeff2,
+  footer-bg: #00c1a5,
+);
+
+$footer-height: max(85px, 45px);
