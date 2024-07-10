@@ -1,0 +1,15 @@
+@use '@/app/styles/variables';
+@use '@/app/styles/utils';
+
+.root {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: variables.$footer-height;
+  font-size: utils.rem(20px);
+  color: white;
+  background-color: map-get(variables.$colors, 'footer-bg');
+}

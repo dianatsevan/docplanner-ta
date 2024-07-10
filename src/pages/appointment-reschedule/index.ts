@@ -1,0 +1,1 @@
+export { AppointmentReschedulePage } from './ui';
