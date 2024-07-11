@@ -1,5 +1,7 @@
+import { ScheduleProvider } from '@/app/providers/schedule';
 import { ContentCard, PageContainer, Typography } from '@/shared/ui';
 import { Calendar } from '@/shared/ui/icons';
+import { Schedule } from '@/widgets/schedule/ui/schedule';
 
 import styles from './appointment-reschedule.module.scss';
 
@@ -21,7 +23,9 @@ export const AppointmentReschedulePage = () => {
           You can change the appointment for when it suits you better
         </Typography>
 
-        <ContentCard className={styles['schedule-card']}>table</ContentCard>
+        <ScheduleProvider>
+          <Schedule />
+        </ScheduleProvider>
 
         <Typography size="lg">Reschedule</Typography>
         <Typography size="lg">Click the button to confirm</Typography>

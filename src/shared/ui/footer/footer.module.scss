@@ -1,5 +1,6 @@
 @use '@/app/styles/variables';
 @use '@/app/styles/utils';
+@use '@/app/styles/media';
 
 .root {
   position: fixed;
@@ -8,8 +9,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: variables.$footer-height;
+  height: variables.$footer-mobile-height;
   font-size: utils.rem(20px);
   color: white;
   background-color: map-get(variables.$colors, 'footer-bg');
+
+  @include media.desktop-up {
+    height: variables.$footer-height;
+  }
 }

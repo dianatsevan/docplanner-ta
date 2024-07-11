@@ -1,0 +1,23 @@
+@use '@/app/styles/utils';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: utils.rem(10px);
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #eff4fd;
+  color: #4a82d2;
+
+  &:hover {
+    background-color: #e0e8f9;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #fbfcfe;
+    color: #d8e4fa;
+  }
+}

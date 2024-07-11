@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: calc(100vh - variables.$footer-height);
+  height: calc(100vh - variables.$footer-mobile-height);
   padding: utils.rem(30px) 0;
   background-color: map-get(variables.$colors, 'page-bg');
   overflow-y: scroll;
@@ -18,10 +18,11 @@
   }
 
   @include media.desktop-up {
+    height: calc(100vh - variables.$footer-height);
     padding: utils.rem(80px) 0;
 
     & > div {
-      width: utils.rem(1100px);
+      width: utils.rem(1000px);
     }
   }
 }
