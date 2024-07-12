@@ -1,4 +1,4 @@
-export * from './buttons';
+export * from './button';
 export * from './content-card';
 export * from './footer';
 export * from './page-container';
