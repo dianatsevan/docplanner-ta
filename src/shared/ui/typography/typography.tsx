@@ -4,19 +4,12 @@ import { ReactNode } from 'react';
 import styles from './typography.module.scss';
 
 type Props = {
-  bold?: boolean;
   children: ReactNode;
+  className?: string;
   size: 'lg' | 'md' | 'sm' | 'xs';
+  tag: keyof JSX.IntrinsicElements;
 };
 
-export const Typography = ({ bold, children, size }: Props) => {
-  return (
-    <p
-      className={clsx(styles[size], {
-        [styles.bold]: bold,
-      })}
-    >
-      {children}
-    </p>
-  );
+export const Typography = ({ children, className, size, tag: Tag }: Props) => {
+  return <Tag className={clsx(styles[size], className)}>{children}</Tag>;
 };
