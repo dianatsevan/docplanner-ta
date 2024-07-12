@@ -6,9 +6,7 @@ export type TTimeSlot = {
 export type TGroupedSchedule = Record<string, TTimeSlot[]>;
 
 export type TScheduleContext = {
-  getNextSchedule: () => void;
-  getPrevSchedule: () => void;
-  hasPrevSchedule: boolean;
+  fetchNextPage: () => void;
   isFetching: boolean;
   isLoading: boolean;
   schedulePages: TScheduleQueryResult[];

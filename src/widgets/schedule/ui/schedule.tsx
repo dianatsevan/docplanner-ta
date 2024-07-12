@@ -1,5 +1,6 @@
 import { useSchedule } from '@/app/providers/schedule';
-import { ContentCard, IconButton } from '@/shared/ui';
+import { useScroll } from '@/shared/lib';
+import { Button, ContentCard } from '@/shared/ui';
 import { ChevronLeft, ChevronRight } from '@/shared/ui/icons';
 
 import { ScheduleTable } from './schedule-table';
@@ -7,20 +8,21 @@ import { ScheduleTable } from './schedule-table';
 import styles from './schedule.module.scss';
 
 export const Schedule = () => {
-  const { getNextSchedule, getPrevSchedule, hasPrevSchedule, isFetching } =
-    useSchedule();
+  const { fetchNextPage, isFetching } = useSchedule();
+  const { handleScroll, isLeftDisabled, ref, scrollLeft, scrollRight } =
+    useScroll(fetchNextPage);
 
   return (
     <ContentCard className={styles.root}>
-      <IconButton isDisabled={!hasPrevSchedule} onClick={getPrevSchedule}>
+      <Button isDisabled={isLeftDisabled} onClick={scrollLeft} variant="icon">
         <ChevronLeft />
-      </IconButton>
+      </Button>
 
-      <ScheduleTable />
+      <ScheduleTable handleScroll={handleScroll} ref={ref} />
 
-      <IconButton isDisabled={isFetching} onClick={getNextSchedule}>
+      <Button isDisabled={isFetching} onClick={scrollRight} variant="icon">
         <ChevronRight />
-      </IconButton>
+      </Button>
     </ContentCard>
   );
 };

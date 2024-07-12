@@ -1,23 +1,47 @@
+import clsx from 'clsx';
+import { Ref, forwardRef } from 'react';
+
 import { useSchedule } from '@/app/providers/schedule';
 
+import { CollapsibleContainer } from '../collapsible-container';
 import { ScheduleDay } from '../schedule-day';
 
 import styles from './schedule-table.module.scss';
 
-export const ScheduleTable = () => {
-  const { schedulePages } = useSchedule();
+type Props = {
+  handleScroll: () => void;
+};
 
-  return (
-    <div className={styles.root}>
-      <legend className={styles.legend}>
-        Choose the time slot which suits you better
-      </legend>
+export const ScheduleTable = forwardRef(
+  ({ handleScroll }: Props, ref: Ref<HTMLDivElement>) => {
+    const { schedulePages } = useSchedule();
 
-      {schedulePages?.map(({ datesRange, schedule }) => {
+    const renderSchedule = () => {
+      return schedulePages?.map(({ datesRange, schedule }) => {
         return datesRange.map((date) => {
           return <ScheduleDay date={date} key={date} slots={schedule[date]} />;
         });
-      })}
-    </div>
-  );
-};
+      });
+    };
+
+    return (
+      <CollapsibleContainer className={styles.wrapper}>
+        {({ isCollapsed }) => (
+          <div
+            className={clsx(styles.root, {
+              [styles.collapsed]: isCollapsed,
+            })}
+            onScroll={handleScroll}
+            ref={ref}
+          >
+            <legend className={styles.legend}>
+              Choose the time slot which suits you better
+            </legend>
+
+            {renderSchedule()}
+          </div>
+        )}
+      </CollapsibleContainer>
+    );
+  },
+);

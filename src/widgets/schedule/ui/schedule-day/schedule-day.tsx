@@ -12,8 +12,8 @@ type Props = {
 
 export const ScheduleDay = ({ date, slots }: Props) => {
   return (
-    <div className={styles['schedule-day']}>
-      <Typography size="sm" tag='h4'>{date}</Typography>
+    <div className={styles.root}>
+      <Typography className={styles.title} size="sm" tag='h4'>{date}</Typography>
 
       {slots?.map((slot) => (
         <TimeSlot data={slot} key={slot.start} />

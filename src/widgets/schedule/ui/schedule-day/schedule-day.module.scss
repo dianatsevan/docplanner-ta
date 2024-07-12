@@ -1,13 +1,13 @@
 @use '@/app/styles/utils';
 
-.schedule-day {
+.root {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: utils.rem(125px);
   padding: 0 10px;
+}
 
-  & > p {
-    margin-bottom: utils.rem(10px);
-  }
+.title {
+  margin: utils.rem(8px) 0;
 }

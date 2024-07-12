@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useMemo } from 'react';
+import { ReactNode, useMemo } from 'react';
 
 import { useScheduleQuery } from './lib';
 import { scheduleContext } from './model';
@@ -11,24 +11,14 @@ type Props = {
 export const ScheduleProvider = ({ children }: Props) => {
   const { data, fetchNextPage, isFetching, isLoading } = useScheduleQuery();
 
-  const getNextSchedule = useCallback(() => {
-    fetchNextPage();
-  }, [fetchNextPage]);
-
-  const getPrevSchedule = () => {};
-
-  const hasPrevSchedule = false;
-
   const values = useMemo(
     () => ({
-      getNextSchedule,
-      getPrevSchedule,
-      hasPrevSchedule,
+      fetchNextPage,
       isFetching,
       isLoading,
       schedulePages: data?.pages ?? ([] as TScheduleQueryResult[]),
     }),
-    [data?.pages, getNextSchedule, hasPrevSchedule, isFetching, isLoading],
+    [data?.pages, fetchNextPage, isFetching, isLoading],
   );
 
   return (
