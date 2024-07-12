@@ -1,8 +1,9 @@
 @use '@/app/styles/variables';
+@use '@/app/styles/media';
 @use '@/app/styles/utils';
 
 .date-card {
-  margin: utils.rem(48px) 0 utils.rem(58px);
+  margin: utils.rem(20px) 0 utils.rem(32px);
 
   & > svg {
     width: utils.rem(30px);
@@ -10,9 +11,9 @@
     margin-right: utils.rem(26px);
     color: #9BA1AA;
   }
-}
 
-.schedule-card {
-  margin: utils.rem(48px) 0 utils.rem(58px);
+  @include media.desktop-up {
+    margin: utils.rem(48px) 0 utils.rem(58px);
+  }
 }
 

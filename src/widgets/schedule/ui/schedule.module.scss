@@ -1,0 +1,13 @@
+@use '@/app/styles/utils';
+@use '@/app/styles/media';
+
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: utils.rem(20px) 0 utils.rem(32px);
+
+  @include media.desktop-up {
+    margin: utils.rem(48px) 0 utils.rem(58px);
+  }
+}
