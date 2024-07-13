@@ -1,0 +1,6 @@
+@use '@/app/styles/utils';
+
+.button {
+  width: 100%;
+  margin-top: utils.rem(38px);
+}

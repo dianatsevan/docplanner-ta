@@ -32,3 +32,18 @@
   background-color: transparent;
   color: #4a82d2;
 }
+
+.contained {
+  background-color: #4a82d2;
+  color: #fff;
+  border-radius: utils.rem(4px);
+
+  &:hover {
+    background-color: #3b6bba;
+  }
+
+  &:disabled {
+    background-color: #d8e4fa;
+    color: #4a82d2;
+  }
+}
