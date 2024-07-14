@@ -9,16 +9,16 @@ type Props = {
 };
 
 export const ScheduleProvider = ({ children }: Props) => {
-  const { data, fetchNextPage, isFetching, isLoading } = useScheduleQuery();
+  const { data, fetchNextPage, isError, isLoading } = useScheduleQuery();
 
   const values = useMemo(
     () => ({
       fetchNextPage,
-      isFetching,
+      isError,
       isLoading,
       schedulePages: data?.pages ?? ([] as TScheduleQueryResult[]),
     }),
-    [data?.pages, fetchNextPage, isFetching, isLoading],
+    [data?.pages, fetchNextPage, isError, isLoading],
   );
 
   return (
