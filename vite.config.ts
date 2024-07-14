@@ -4,6 +4,11 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {
+    modules: {
+      generateScopedName: '[name]_[local]_[hash:base64:5]',
+    },
+  },
   plugins: [react()],
   resolve: {
     alias: {

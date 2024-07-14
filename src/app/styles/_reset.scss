@@ -32,12 +32,10 @@ s,
 samp,
 small,
 strike,
-strong,
 sub,
 sup,
 tt,
 var,
-b,
 u,
 i,
 center,
@@ -79,13 +77,13 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 article,
@@ -99,79 +97,83 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 html,
 body,
 #app {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    -webkit-text-size-adjust: none;
-    -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  -webkit-text-size-adjust: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 #app {
-    position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 input,
 button,
 select,
 textarea {
-    font-family: inherit;
+  font-family: inherit;
 }
 
 input,
 textarea {
-    &::placeholder {
-        opacity: 1;
-    }
+  &::placeholder {
+    opacity: 1;
+  }
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 a {
-    text-decoration: none;
-    background-color: transparent;
+  text-decoration: none;
+  background-color: transparent;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#root {
+  height: 100vh;
 }

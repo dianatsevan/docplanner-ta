@@ -1,0 +1,21 @@
+@use '@/app/styles/utils';
+
+.wrapper {
+  overflow: scroll;
+}
+
+.root {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  border-bottom: 1px solid #f3f3f5;
+
+  &.collapsed {
+    max-height: utils.rem(350px);
+  }
+}
+
+.legend {
+  display: none;
+}

@@ -1,0 +1,48 @@
+@use '@/app/styles/utils';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: utils.rem(10px);
+  cursor: pointer;
+  border: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.icon {
+  border-radius: 50%;
+  background-color: #eff4fd;
+  color: #4a82d2;
+
+  &:hover {
+    background-color: #e0e8f9;
+  }
+
+  &:disabled {
+    background-color: #fbfcfe;
+    color: #d8e4fa;
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: #4a82d2;
+}
+
+.contained {
+  background-color: #4a82d2;
+  color: #fff;
+  border-radius: utils.rem(4px);
+
+  &:hover {
+    background-color: #3b6bba;
+  }
+
+  &:disabled {
+    background-color: #749cd5;
+  }
+}

@@ -1,0 +1,21 @@
+@use '@/app/styles/utils';
+
+.bold {
+  font-weight: 600;
+}
+
+.xs {
+  font-size: utils.rem(14px);
+}
+
+.sm {
+  font-size: utils.rem(16px);
+}
+
+.md {
+  font-size: utils.rem(18px);
+}
+
+.lg {
+  font-size: utils.rem(20px);
+}

@@ -1,0 +1,19 @@
+@use '@/app/styles/utils';
+@use '@/app/styles/media';
+
+.heading {
+  margin-top: utils.rem(32px);
+
+  @include media.desktop-up {
+    margin-top: utils.rem(48px);
+  }
+}
+
+.button {
+  width: 100%;
+  margin-top: utils.rem(28px);
+
+  @include media.desktop-up {
+    margin-top: utils.rem(38px);
+  }
+}

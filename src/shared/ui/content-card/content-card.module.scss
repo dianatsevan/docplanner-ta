@@ -1,0 +1,14 @@
+@use '@/app/styles/media';
+@use '@/app/styles/utils';
+
+.root {
+  display: flex;
+  padding: utils.rem(16px);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  @include media.desktop-up {
+    padding: utils.rem(26px);
+  }
+}
