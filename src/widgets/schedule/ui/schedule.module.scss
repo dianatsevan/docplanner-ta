@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin: utils.rem(20px) 0 utils.rem(32px);
+  margin-top: utils.rem(20px);
 
   @include media.desktop-up {
-    margin: utils.rem(48px) 0 utils.rem(58px);
+    margin-top: utils.rem(48px);
   }
 }

@@ -22,7 +22,7 @@ export const RescheduleButton = () => {
 
   return (
     <>
-      <Typography size="lg" tag="h2">
+      <Typography className={styles.heading} size="lg" tag="h2">
         <b>Reschedule</b>
       </Typography>
       <Typography size="lg" tag="h3">

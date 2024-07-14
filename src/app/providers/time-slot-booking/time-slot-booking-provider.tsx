@@ -27,6 +27,7 @@ export const TimeSlotBookingProvider = ({ children }: Props) => {
     useBookingMutation({
       onSuccess: (timeSlot: TTimeSlot) => {
         setBookedTimeSlot(timeSlot);
+        setSelectedTimeSlot(null);
       },
     });
 
