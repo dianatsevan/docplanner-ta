@@ -8,7 +8,7 @@ export type TGroupedSchedule = Record<string, TTimeSlot[]>;
 
 export type TScheduleContext = {
   fetchNextPage: () => void;
-  isFetching: boolean;
+  isError: boolean;
   isLoading: boolean;
   schedulePages: TScheduleQueryResult[];
 };

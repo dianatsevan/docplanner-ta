@@ -6,7 +6,7 @@ export const scheduleContext = createContext<TScheduleContext>({
   fetchNextPage: () => {
     return;
   },
-  isFetching: false,
+  isError: false,
   isLoading: false,
   schedulePages: [],
 });
