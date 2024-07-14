@@ -23,7 +23,7 @@ export const TimeSlotBookingProvider = ({ children }: Props) => {
     defaultBookedTimeSlot,
   );
 
-  const { isPending: isBookingLoading, mutate: mutateTimeSlotBooking } =
+  const { isError: isBookingError, isPending: isBookingLoading, mutate: mutateTimeSlotBooking } =
     useBookingMutation({
       onSuccess: (timeSlot: TTimeSlot) => {
         setBookedTimeSlot(timeSlot);
@@ -36,7 +36,7 @@ export const TimeSlotBookingProvider = ({ children }: Props) => {
       value={{ mutateTimeSlotBooking, setBookedTimeSlot, setSelectedTimeSlot }}
     >
       <timeSlotBookingContext.Provider
-        value={{ bookedTimeSlot, isBookingLoading, selectedTimeSlot }}
+        value={{ bookedTimeSlot, isBookingError, isBookingLoading, selectedTimeSlot }}
       >
         {children}
       </timeSlotBookingContext.Provider>

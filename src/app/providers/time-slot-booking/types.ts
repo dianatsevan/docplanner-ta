@@ -10,6 +10,7 @@ export type TTimeSlotBookingActionsContext = {
 
 export type TTimeSlotBookingContext = {
   bookedTimeSlot: TTimeSlot;
+  isBookingError: boolean;
   isBookingLoading: boolean;
   selectedTimeSlot: TTimeSlot | null;
 };

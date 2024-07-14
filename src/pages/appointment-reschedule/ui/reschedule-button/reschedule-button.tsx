@@ -11,7 +11,8 @@ import styles from './reschedule-button.module.scss';
 
 export const RescheduleButton = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { isBookingLoading, selectedTimeSlot } = useTimeSlotBooking();
+  const { isBookingError, isBookingLoading, selectedTimeSlot } =
+    useTimeSlotBooking();
   const { mutateTimeSlotBooking } = useTimeSlotBookingActions();
 
   const timeStamp = selectedTimeSlot?.start;
@@ -49,6 +50,11 @@ export const RescheduleButton = () => {
           {day} at {time}
         </Typography>
       </Button>
+      {isBookingError && (
+        <Typography size="xs" tag="p">
+          Booking wasn't completed. Try again
+        </Typography>
+      )}
     </div>
   );
 };
