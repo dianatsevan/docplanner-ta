@@ -1,14 +1,24 @@
-import { useTimeSlotBooking, useTimeSlotBookingActions } from '@/app/providers/time-slot-booking';
+import { useEffect, useRef } from 'react';
+
+import {
+  useTimeSlotBooking,
+  useTimeSlotBookingActions,
+} from '@/app/providers/time-slot-booking';
 import { formatBookedTimeSlot } from '@/pages/appointment-reschedule/lib';
 import { Button, Typography } from '@/shared/ui';
 
 import styles from './reschedule-button.module.scss';
 
 export const RescheduleButton = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const { isBookingLoading, selectedTimeSlot } = useTimeSlotBooking();
   const { mutateTimeSlotBooking } = useTimeSlotBookingActions();
 
   const timeStamp = selectedTimeSlot?.start;
+
+  useEffect(() => {
+    containerRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [timeStamp]);
 
   if (!timeStamp) {
     return null;
@@ -21,7 +31,7 @@ export const RescheduleButton = () => {
   };
 
   return (
-    <>
+    <div ref={containerRef}>
       <Typography className={styles.heading} size="lg" tag="h2">
         <b>Reschedule</b>
       </Typography>
@@ -39,6 +49,6 @@ export const RescheduleButton = () => {
           {day} at {time}
         </Typography>
       </Button>
-    </>
+    </div>
   );
 };
