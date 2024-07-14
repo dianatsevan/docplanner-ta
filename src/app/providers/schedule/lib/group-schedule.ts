@@ -8,6 +8,7 @@ import { formatDateToDayMonthWeekday } from '@/shared/lib';
 export const groupSchedule = (scheduleResponse: TScheduleResponse) => {
   return scheduleResponse.reduce((acc, item) => {
     const slot: TTimeSlot = {
+      end: item.End,
       isTaken: item.Taken,
       start: item.Start,
     };

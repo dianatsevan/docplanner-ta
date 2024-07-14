@@ -1,14 +1,24 @@
-import { useSelectedTimeSlot } from '@/app/providers/time-slot-selection';
+import { useTimeSlotBooking, useTimeSlotBookingActions } from '@/app/providers/time-slot-booking';
+import { formatBookedTimeSlot } from '@/pages/appointment-reschedule/lib';
 import { Button, Typography } from '@/shared/ui';
 
 import styles from './reschedule-button.module.scss';
 
 export const RescheduleButton = () => {
-  const selectedTimeSlot = useSelectedTimeSlot();
+  const { isBookingLoading, selectedTimeSlot } = useTimeSlotBooking();
+  const { mutateTimeSlotBooking } = useTimeSlotBookingActions();
 
-  if (!selectedTimeSlot) {
+  const timeStamp = selectedTimeSlot?.start;
+
+  if (!timeStamp) {
     return null;
   }
+
+  const { day, time } = formatBookedTimeSlot(timeStamp);
+
+  const handleClick = () => {
+    mutateTimeSlotBooking(selectedTimeSlot);
+  };
 
   return (
     <>
@@ -19,9 +29,14 @@ export const RescheduleButton = () => {
         Click the button to confirm
       </Typography>
 
-      <Button className={styles.button} variant="contained">
+      <Button
+        className={styles.button}
+        isDisabled={isBookingLoading}
+        onClick={handleClick}
+        variant="contained"
+      >
         <Typography size="md" tag="span">
-          {selectedTimeSlot}
+          {day} at {time}
         </Typography>
       </Button>
     </>

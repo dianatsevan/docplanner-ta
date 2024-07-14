@@ -1,4 +1,5 @@
 export type TTimeSlot = {
+  end: string;
   isTaken: boolean;
   start: string;
 };
@@ -19,6 +20,7 @@ export type TScheduleQueryResult = {
 };
 
 export type TScheduleResponse = Array<{
+  End: string;
   Start: string;
   Taken: boolean;
 }>;
