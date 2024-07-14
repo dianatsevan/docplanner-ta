@@ -20,7 +20,8 @@ const queryFn = async ({
 }: QueryParam): Promise<TScheduleQueryResult> => {
   const response = await fetchSchedule(startDate);
 
-  const groupedSchedule = groupSchedule(response);
+  const shouldSkipPast = startDate < new Date();
+  const groupedSchedule = groupSchedule(response, shouldSkipPast);
 
   const datesRange = getDatesRange(startDate);
 
