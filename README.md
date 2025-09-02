@@ -1,3 +1,8 @@
+# 🚀 Technical Assignment - Docplanner
+🛠️ **Tech stack:** React + TypeScript
+<details>
+<summary>📝 Solution description</summary>
+
 Hi Docplanner team! I decided not to leave the comment’s inside the code but write the description to let you know and understand me and the reasons better.
 
 Lets start with the project configuration.
@@ -26,6 +31,11 @@ Some words about **routing**. I kept the app simple without routing. Its’s imp
 
 **Testing**. The thing for which I, unfortunately, had no time. The best it to have 100% test-coverage of the project. To be able to have, we need to write test from the beginning of the project. If it isn't possible for some reason there always should a bandwidth planned for this.
 
+</details>
+
+
+![Desktop demo](./public/demo-desktop.gif)
+![Mobile demo](./public/demo-mobile.gif)
 
 ## Command Line Interface
 

@@ -1,3 +1,4 @@
 export const getNextDate = (date: Date, daysPeriod: number): Date => {
-  return new Date(date.setDate(date.getDate() + daysPeriod));
+  const nextDate = new Date(date);
+  return new Date(nextDate.setDate(nextDate.getDate() + daysPeriod));
 };

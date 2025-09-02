@@ -9,7 +9,8 @@ type Props = {
 };
 
 export const ScheduleProvider = ({ children }: Props) => {
-  const { data, fetchNextPage, isError, isLoading } = useScheduleQuery();
+  const { data, fetchNextPage, isError, isLoading } =
+    useScheduleQuery();
 
   const values = useMemo(
     () => ({

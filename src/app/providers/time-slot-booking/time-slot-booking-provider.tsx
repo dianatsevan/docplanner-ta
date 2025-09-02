@@ -1,6 +1,7 @@
 import { ReactNode, useState } from 'react';
 
 import { TTimeSlot } from '@/app/providers/schedule';
+import { queryClient } from '@/shared/lib';
 
 import { useBookingMutation } from './lib';
 import { timeSlotBookingActionsContext, timeSlotBookingContext } from './model';
@@ -28,6 +29,7 @@ export const TimeSlotBookingProvider = ({ children }: Props) => {
       onSuccess: (timeSlot: TTimeSlot) => {
         setBookedTimeSlot(timeSlot);
         setSelectedTimeSlot(null);
+        queryClient.invalidateQueries({ queryKey: ['schedule'] })
       },
     });
 
